@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "763083672445",
+    "project_id": "desa-wisata-bonjeruk",
+    "storage_bucket": "desa-wisata-bonjeruk.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763083672445:android:c53afea4becf868a3f5a14",
+        "android_client_info": {
+          "package_name": "com.example.desa_bonjeruk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-MKpjY-0Pq-zmT_YwTfwpGrgLDvbbCts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

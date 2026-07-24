@@ -1,0 +1,19 @@
+{
+  "@@locale": "en",
+  "appTitle": "My Application",
+  "welcomeMessage": "Welcome to our application!",
+  "loginButton": "Sign In",
+  "supportedBy": "Supported by",
+  "homeTitle": "Desa Bonjeruk",
+  "homeDescription": "Bonjeruk’s journey does not end with its declaration as a tourism village — it continues to evolve, guided by a deep commitment to sustainability and the dreams of its ancestors. The people of Bonjeruk believe that a truly beautiful village is one that is clean in its environment, rich in its culture, independent in its economy, and strong in its identity.",
+  "welcomeInfoTitle": "Welcome to the Bonjeruk Village Digital Information Center 🌿.",
+  "locationAddress": "Desa Bonjeruk, Kecamatan Jonggat Kabupaten Lombok Tengah Nusa Tenggara Barat Indonesia 83561",
+  "openHours": "Monday – Sunday 8 AM – 5 PM",
+  "socialMediaTitle": "Social Media 📸",
+  "website": "Website",
+  "instagram": "Instagram",
+  "facebook": "Facebook",
+  "websiteDescription": "Discover Bonjeruk's journey regarding sustainability, culture, and identity through the website.",
+  "instagramDescription": "Discover the journey in the Bonjeruk tourism village and follow us on Instagram.",
+  "facebookDescription": "Discover the journey in the Bonjeruk tourism village and follow us on Facebook."
+}

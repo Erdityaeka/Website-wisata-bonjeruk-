@@ -1,0 +1,39 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "desa-wisata-bonjeruk",
+          "appId": "1:763083672445:android:c53afea4becf868a3f5a14",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "desa-wisata-bonjeruk",
+          "configurations": {
+            "android": "1:763083672445:android:c53afea4becf868a3f5a14",
+            "ios": "1:763083672445:ios:afb305bde208c6cd3f5a14",
+            "macos": "1:763083672445:ios:afb305bde208c6cd3f5a14",
+            "web": "1:763083672445:web:99e042e80f6886cc3f5a14",
+            "windows": "1:763083672445:web:d2bb767405f5235b3f5a14"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
