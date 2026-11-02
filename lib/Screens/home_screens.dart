@@ -4,10 +4,10 @@ import 'package:desa_bonjeruk/controller/app_theme_controller.dart';
 import 'package:desa_bonjeruk/controller/home_controller.dart';
 import 'package:desa_bonjeruk/l10n/app_localizations.dart';
 import 'package:desa_bonjeruk/widgets/banner_logo_widget.dart';
+import 'package:desa_bonjeruk/widgets/locationwisatawidget.dart';
 import 'package:desa_bonjeruk/widgets/medsos_widget.dart';
 import 'package:desa_bonjeruk/widgets/welcome_info_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreens extends StatefulWidget {
   const HomeScreens({super.key});
@@ -33,60 +33,6 @@ class _HomeScreensState extends State<HomeScreens> {
     super.dispose();
   }
 
-  // Helper dialog konfirmasi sebelum unduh APK
-  Future<void> _confirmAndDownloadApk(BuildContext context, bool isDark) async {
-    final shouldDownload = await showDialog<bool>(
-      context: context,
-      builder: (BuildContext dialogContext) {
-        return AlertDialog(
-          backgroundColor: isDark ? hitam : putih,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          title: Text(
-            'Unduh Aplikasi',
-            style: hitamBold20.copyWith(color: isDark ? putih : hitam),
-          ),
-          content: Text(
-            'Apakah Anda yakin ingin mengunduh aplikasi informasi Desa Wisata Bonjeruk (APK)?',
-            style: hitamreguler12.copyWith(color: isDark ? putih : hitam),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(dialogContext).pop(false),
-              child: Text(
-                'Batal',
-                style: hitamreguler12.copyWith(color: Colors.grey),
-              ),
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: hijau,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-              onPressed: () => Navigator.of(dialogContext).pop(true),
-              child: Text('Unduh', style: hitamBold12.copyWith(color: putih)),
-            ),
-          ],
-        );
-      },
-    );
-
-    if (shouldDownload == true) {
-      const directDownloadUrl =
-          'https://drive.google.com/file/d/1hQQW_iSsLMjUIKSNhVPtCpmNYX-30IWr/view?usp=sharing';
-      final uri = Uri.parse(directDownloadUrl);
-
-      if (await canLaunchUrl(uri)) {
-        await launchUrl(uri, mode: LaunchMode.externalApplication);
-      } else {
-        debugPrint('Tidak dapat membuka link download APK');
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -101,9 +47,7 @@ class _HomeScreensState extends State<HomeScreens> {
           child: Column(
             children: [
               BannerLogoWidget(controller: _controller),
-
               const SizedBox(height: 60),
-
               Padding(
                 padding: const EdgeInsets.only(
                   right: 20.0,
@@ -115,16 +59,16 @@ class _HomeScreensState extends State<HomeScreens> {
                   children: [
                     _buildDeskripsi(l10n, isDark),
                     const SizedBox(height: 5),
-
-                    // Widget Welcome & Info Kontak
                     WelcomeInfoWidget(controller: _controller),
                     const SizedBox(height: 5),
-
-                    // Widget Media Sosial
+                    LocationwisataWidget(controller: _controller),
+                    const SizedBox(height: 5),
                     MedsosWidget(controller: _controller),
                   ],
                 ),
               ),
+              const SizedBox(height: 20),
+              _buildFooter(l10n, isDark),
             ],
           ),
         ),
@@ -138,6 +82,35 @@ class _HomeScreensState extends State<HomeScreens> {
     Color iconColor,
   ) {
     return AppBar(
+      titleSpacing: 16,
+      title: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Text('HI,', style: hitamBold12.copyWith(color: isDark ? putih : hitam)),
+              const SizedBox(width: 5),
+              Text(
+                l10n?.homewelcometitle ?? 'Selamat Datang Wisatawan 🖐️',
+                style: hitamBold12.copyWith(color: isDark ? putih : hitam),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          ),
+          const SizedBox(height: 2),
+          Text(
+            l10n?.homewelcomesubtitle ??
+                'Ayo Mulai Mencari Informasi Di Desa Wisata Bonjeruk',
+            style: hitamreguler10.copyWith(
+              color: isDark ? putih : hitam,
+            ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
+      ),
       actions: [
         _buildAppBarCapsuleButton(
           onTap: AppLocaleController.toggleLocale,
@@ -155,7 +128,6 @@ class _HomeScreensState extends State<HomeScreens> {
           ),
         ),
         const SizedBox(width: 6),
-
         _buildAppBarCapsuleButton(
           onTap: AppThemeController.toggleTheme,
           isDark: isDark,
@@ -175,23 +147,7 @@ class _HomeScreensState extends State<HomeScreens> {
             ],
           ),
         ),
-        const SizedBox(width: 6),
-        _buildAppBarCapsuleButton(
-          onTap: () => _confirmAndDownloadApk(context, isDark),
-          isDark: isDark,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.download, color: iconColor, size: 16),
-              const SizedBox(width: 5),
-              Text(
-                'App',
-                style: hitamBold12.copyWith(color: isDark ? putih : hitam),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(width: 12),
+        const SizedBox(width: 16),
       ],
       flexibleSpace: Container(
         decoration: BoxDecoration(color: isDark ? hitam : putih),
@@ -199,7 +155,6 @@ class _HomeScreensState extends State<HomeScreens> {
     );
   }
 
-  // Helper Widget
   Widget _buildAppBarCapsuleButton({
     required VoidCallback onTap,
     required bool isDark,
@@ -244,11 +199,116 @@ class _HomeScreensState extends State<HomeScreens> {
         const SizedBox(height: 10),
         Text(
           l10n?.homeDescription ??
-              "Bonjeruk’s journey does not end with its declaration as a tourism village — it continues to evolve, guided by a deep commitment to sustainability and the dreams of its ancestors. The people of Bonjeruk believe that a truly beautiful village is one that is clean in its environment, rich in its culture, independent in its economy, and strong in its identity.",
+              "Bonjeruk’s journey does not end with its declaration as a tourism village...",
           textAlign: TextAlign.center,
           style: hitamreguler12.copyWith(color: activeTextColor),
         ),
       ],
+    );
+  }
+
+  Widget _buildFooter(AppLocalizations? l10n, bool isDark) {
+    final textColor = isDark ? putih : hitam;
+    final subTextColor = isDark ? putih.withOpacity(0.7) : hitam.withOpacity(0.7);
+    final footerBg = isDark ? hitam : putih;
+    final borderColor = isDark ? putih : hitam;
+
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: footerBg,
+        border: Border(
+          top: BorderSide(color: borderColor, width: 1),
+        ),
+      ),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+      child: SafeArea(
+        top: false,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // Section Contact Us
+            Expanded(
+              flex: 2,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Contact Us',
+                    style: hitamBold12.copyWith(color: textColor),
+                  ),
+                  const SizedBox(height: 4),
+                  InkWell(
+                    onTap: () => _controller.launchURL(
+                      'https://maps.app.goo.gl/4UYztaH47Ai1Y9eo6',
+                    ),
+                    child: Text(
+                      
+                          'Jl. Pelor Mas Raya No.III, Kekalik Jaya, Kec. Sekarbela, Kota Mataram, Nusa Tenggara Bar. 83126',
+                      style: hitamreguler12.copyWith(color: textColor),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            
+            // Section Supported By
+            Expanded(
+              flex: 1,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      l10n?.supportedBy ?? 'Didukung Oleh',
+                      style: hitamBold12.copyWith(color: textColor),
+                    ),
+                    const SizedBox(height: 5),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        GestureDetector(
+                          onTap: () => _controller.launchURL('https://www.instagram.com/kkn_desabonjeruk2026?igsh=MTR6cGJpYXR2OXNydA=='),
+                          child: Image.asset(
+                            "images/kkn.png",
+                            width: 24,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                        const SizedBox(width: 5),
+                        Text(
+                          'x',
+                          style: hitamBold15.copyWith(color: textColor),
+                        ),
+                        const SizedBox(width: 5),
+                        GestureDetector(
+                          onTap: ()=> _controller.launchURL('https://www.instagram.com/desawisatabonjeruk?igsh=NjQ4OXVkMmVnZDh1'),
+                          child: Image.asset(
+                            "images/desa.png",
+                            width: 24,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            // Section Copyright
+            Expanded(
+              flex: 2,
+              child: Text(
+                'Copyright © 2026',
+                textAlign: TextAlign.end,
+                style: hitamreguler12.copyWith(color: subTextColor, fontSize: 11),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

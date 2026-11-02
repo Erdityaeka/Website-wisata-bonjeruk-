@@ -36,7 +36,7 @@ class AppLocalizationsId extends AppLocalizations {
       'Desa Bonjeruk, Kecamatan Jonggat Kabupaten Lombok Tengah Nusa Tenggara Barat Indonesia 83561';
 
   @override
-  String get openHours => 'Senin – Minggu 8 AM – 5 PM';
+  String get openHours => 'Senin – Minggu 08.00 – 17.00 WITA';
 
   @override
   String get socialMediaTitle => 'Media Sosial 📸';
@@ -51,6 +51,12 @@ class AppLocalizationsId extends AppLocalizations {
   String get facebook => 'Facebook';
 
   @override
+  String get tiktok => 'TikTok';
+
+  @override
+  String get whatsapp => 'WhatsApp';
+
+  @override
   String get websiteDescription =>
       'Temukan perjalanan Bonjeruk mengenai keberlanjutan, budaya, dan identitas melalui website.';
 
@@ -61,4 +67,40 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get facebookDescription =>
       'Temukan perjalanan di desa wisata Bonjeruk dan ikuti kami di Facebook.';
+
+  @override
+  String get tiktokDescription =>
+      'Temukan perjalanan di desa wisata Bonjeruk dan ikuti kami di TikTok.';
+
+  @override
+  String get whatsappDescription =>
+      'Hubungi kami di WhatsApp untuk informasi dan layanan wisata Desa Bonjeruk.';
+
+  @override
+  String get homewelcometitle => 'Selamat Datang Wisatawan 🖐️';
+
+  @override
+  String get homewelcomesubtitle =>
+      'Ayo Mulai Mencari Informasi Di Desa Wisata Bonjeruk';
+
+  @override
+  String get locationWisataKuliner => 'Lokasi Wisata Kuliner';
+
+  @override
+  String get descriptionTitle => 'Deskripsi';
+
+  @override
+  String get exploreLocation => 'Jelajahi Lokasi';
+
+  @override
+  String get mapUrlNotAvailable => 'Tautan peta tidak tersedia';
+
+  @override
+  String get cannotOpenMapUrl => 'Tidak dapat membuka tautan Peta';
+
+  @override
+  String get openingHoursNotAvailable => 'Jam buka tidak tersedia';
+
+  @override
+  String get kknGroup => 'KKN Kelompok 17';
 }

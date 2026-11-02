@@ -63,13 +63,13 @@ class WelcomeInfoWidget extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         InkWell(
-          onTap: () => controller.launchURL('tel:+6287701508311'),
+          onTap: () => controller.launchURL('tel:+62817368020'),
           child: Row(
             children: [
               Icon(Icons.phone, color: iconColor),
               const SizedBox(width: 10),
               Text(
-                '+6287701508311',
+                '+62817368020',
                 style: hitamreguler12.copyWith(color: textColor),
               ),
             ],

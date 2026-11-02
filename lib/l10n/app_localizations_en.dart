@@ -51,6 +51,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get facebook => 'Facebook';
 
   @override
+  String get tiktok => 'TikTok';
+
+  @override
+  String get whatsapp => 'WhatsApp';
+
+  @override
   String get websiteDescription =>
       'Discover Bonjeruk\'s journey regarding sustainability, culture, and identity through the website.';
 
@@ -61,4 +67,40 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get facebookDescription =>
       'Discover the journey in the Bonjeruk tourism village and follow us on Facebook.';
+
+  @override
+  String get tiktokDescription =>
+      'Discover the journey in the Bonjeruk tourism village and follow us on TikTok.';
+
+  @override
+  String get whatsappDescription =>
+      'Contact us on WhatsApp for information and tourism services in Bonjeruk Village.';
+
+  @override
+  String get homewelcometitle => 'Welcome Tourists 🖐️';
+
+  @override
+  String get homewelcomesubtitle =>
+      'Let\'s Start Gathering Information at Bonjeruk Tourism Village.';
+
+  @override
+  String get locationWisataKuliner => 'Location Wisata Kuliner';
+
+  @override
+  String get descriptionTitle => 'Description';
+
+  @override
+  String get exploreLocation => 'Explore Location';
+
+  @override
+  String get mapUrlNotAvailable => 'Map link is not available';
+
+  @override
+  String get cannotOpenMapUrl => 'Cannot open map link';
+
+  @override
+  String get openingHoursNotAvailable => 'Opening hours not available';
+
+  @override
+  String get kknGroup => 'Community Service Program (KKN) Group 17';
 }

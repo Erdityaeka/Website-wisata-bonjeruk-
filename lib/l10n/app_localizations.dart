@@ -176,6 +176,18 @@ abstract class AppLocalizations {
   /// **'Facebook'**
   String get facebook;
 
+  /// No description provided for @tiktok.
+  ///
+  /// In en, this message translates to:
+  /// **'TikTok'**
+  String get tiktok;
+
+  /// No description provided for @whatsapp.
+  ///
+  /// In en, this message translates to:
+  /// **'WhatsApp'**
+  String get whatsapp;
+
   /// No description provided for @websiteDescription.
   ///
   /// In en, this message translates to:
@@ -193,6 +205,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Discover the journey in the Bonjeruk tourism village and follow us on Facebook.'**
   String get facebookDescription;
+
+  /// No description provided for @tiktokDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover the journey in the Bonjeruk tourism village and follow us on TikTok.'**
+  String get tiktokDescription;
+
+  /// No description provided for @whatsappDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact us on WhatsApp for information and tourism services in Bonjeruk Village.'**
+  String get whatsappDescription;
+
+  /// No description provided for @homewelcometitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome Tourists 🖐️'**
+  String get homewelcometitle;
+
+  /// No description provided for @homewelcomesubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s Start Gathering Information at Bonjeruk Tourism Village.'**
+  String get homewelcomesubtitle;
+
+  /// No description provided for @locationWisataKuliner.
+  ///
+  /// In en, this message translates to:
+  /// **'Location Wisata Kuliner'**
+  String get locationWisataKuliner;
+
+  /// No description provided for @descriptionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get descriptionTitle;
+
+  /// No description provided for @exploreLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore Location'**
+  String get exploreLocation;
+
+  /// No description provided for @mapUrlNotAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Map link is not available'**
+  String get mapUrlNotAvailable;
+
+  /// No description provided for @cannotOpenMapUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot open map link'**
+  String get cannotOpenMapUrl;
+
+  /// No description provided for @openingHoursNotAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Opening hours not available'**
+  String get openingHoursNotAvailable;
+
+  /// No description provided for @kknGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Community Service Program (KKN) Group 17'**
+  String get kknGroup;
 }
 
 class _AppLocalizationsDelegate

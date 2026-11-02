@@ -75,6 +75,32 @@ class MedsosWidget extends StatelessWidget {
               "Discover the journey in the Bonjeruk tourism village and follow us on Facebook.",
           textColor: textColor,
         ),
+
+        const SizedBox(height: 10),
+
+        // CARD TIKTOK
+        _buildSocialCard(
+          url: 'https://www.tiktok.com/@desawisatabonjeruk',
+          iconPath: 'images/tiktok.png',
+          title: l10n?.tiktok ?? 'TikTok',
+          description:
+              l10n?.tiktokDescription ??
+              "Discover the journey in the Bonjeruk tourism village and follow us on TikTok.",
+          textColor: textColor,
+        ),
+
+        const SizedBox(height: 10),
+
+        // CARD WHATSAPP
+        _buildSocialCard(
+          url: 'https://wa.me/62817368020',
+          iconPath: 'images/wa.png',
+          title: l10n?.whatsapp ?? 'WhatsApp',
+          description:
+              l10n?.whatsappDescription ??
+              "Contact us on WhatsApp for information and tourism services in Bonjeruk Village.",
+          textColor: textColor,
+        ),
       ],
     );
   }
@@ -120,7 +146,6 @@ class MedsosWidget extends StatelessWidget {
                       Text(
                         title,
                         style: hitamBold15.copyWith(color: textColor),
-                        
                       ),
                       const SizedBox(height: 4),
                       Text(

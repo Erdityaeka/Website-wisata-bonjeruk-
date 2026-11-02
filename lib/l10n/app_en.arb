@@ -13,7 +13,20 @@
   "website": "Website",
   "instagram": "Instagram",
   "facebook": "Facebook",
+  "tiktok": "TikTok",
+  "whatsapp": "WhatsApp",
   "websiteDescription": "Discover Bonjeruk's journey regarding sustainability, culture, and identity through the website.",
   "instagramDescription": "Discover the journey in the Bonjeruk tourism village and follow us on Instagram.",
-  "facebookDescription": "Discover the journey in the Bonjeruk tourism village and follow us on Facebook."
+  "facebookDescription": "Discover the journey in the Bonjeruk tourism village and follow us on Facebook.",
+  "tiktokDescription": "Discover the journey in the Bonjeruk tourism village and follow us on TikTok.",
+  "whatsappDescription": "Contact us on WhatsApp for information and tourism services in Bonjeruk Village.",
+  "homewelcometitle": "Welcome Tourists 🖐️",
+  "homewelcomesubtitle": "Let's Start Gathering Information at Bonjeruk Tourism Village.",
+  "locationWisataKuliner": "Location Wisata Kuliner",
+  "descriptionTitle": "Description",
+  "exploreLocation": "Explore Location",
+  "mapUrlNotAvailable": "Map link is not available",
+  "cannotOpenMapUrl": "Cannot open map link",
+  "openingHoursNotAvailable": "Opening hours not available",
+  "kknGroup": "Community Service Program (KKN) Group 17"
 }
